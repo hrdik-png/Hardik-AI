@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hardik AI</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0f1115;
+            --panel: #171a21;
+            --panel-2: #1e222b;
+            --border: #2b303a;
+            --text: #f1f3f5;
+            --muted: #969daa;
+            --user: #2d6cdf;
+            --user-hover: #3b78df;
+            --ai: #20242d;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+            width: min(1000px, 94vw);
+            height: min(900px, 94vh);
+
+            background: var(--panel);
+
+            border: 1px solid var(--border);
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        /* HEADER */
+
+        .header {
+            padding: 18px 22px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            border-bottom: 1px solid var(--border);
+
+            background: rgba(23, 26, 33, 0.95);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 38px;
+            height: 38px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: var(--user);
+
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .header p {
+            margin: 3px 0 0;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .clear-button {
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--muted);
+
+            padding: 8px 12px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+            font-size: 12px;
+
+            transition: 0.2s;
+        }
+
+        .clear-button:hover {
+            background: var(--panel-2);
+            color: var(--text);
+        }
+
+        /* CHAT */
+
+        #chat {
+            flex: 1;
+
+            padding: 28px;
+
+            overflow-y: auto;
+
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
+        }
+
+        .message {
+            display: flex;
+            width: 100%;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message.ai {
+            justify-content: flex-start;
+        }
+
+        .message-content {
+            display: flex;
+            flex-direction: column;
+            max-width: min(75%, 700px);
+        }
+
+        .label {
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 5px;
+        }
+
+        .user .label {
+            text-align: right;
+        }
+
+        .bubble {
+            padding: 12px 15px;
+
+            border-radius: 14px;
+
+            line-height: 1.55;
+            font-size: 14px;
+
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        .user .bubble {
+            background: var(--user);
+            color: white;
+
+            border-bottom-right-radius: 4px;
+        }
+
+        .ai .bubble {
+            background: var(--ai);
+            color: var(--text);
+
+            border: 1px solid var(--border);
+
+            border-bottom-left-radius: 4px;
+        }
+
+        /* TYPING */
+
+        .typing {
+            color: var(--muted) !important;
+        }
+
+        .dots {
+            display: inline-flex;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .dots span {
+            width: 5px;
+            height: 5px;
+
+            background: var(--muted);
+
+            border-radius: 50%;
+
+            animation: blink 1.2s infinite;
+        }
+
+        .dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+
+            0%,
+            60%,
+            100% {
+                opacity: 0.3;
+            }
+
+            30% {
+                opacity: 1;
+            }
+        }
+
+        /* INPUT */
+
+        .input-wrapper {
+            padding: 15px 18px 18px;
+
+            border-top: 1px solid var(--border);
+
+            background: var(--panel);
+        }
+
+        .input-area {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+
+            background: var(--panel-2);
+
+            border: 1px solid var(--border);
+            border-radius: 13px;
+
+            padding: 7px;
+        }
+
+        #question {
+            flex: 1;
+
+            min-height: 42px;
+            max-height: 120px;
+
+            resize: none;
+
+            border: none;
+            outline: none;
+
+            background: transparent;
+
+            color: var(--text);
+
+            font-family: inherit;
+            font-size: 14px;
+
+            padding: 11px 10px;
+        }
+
+        #question::placeholder {
+            color: var(--muted);
+        }
+
+        #send-button {
+            width: 42px;
+            height: 42px;
+
+            border: none;
+            border-radius: 10px;
+
+            background: var(--user);
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 17px;
+
+            transition: 0.2s;
+        }
+
+        #send-button:hover {
+            background: var(--user-hover);
+        }
+
+        #send-button:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        .hint {
+            margin-top: 8px;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 10px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            body {
+                align-items: stretch;
+            }
+
+            .chat-container {
+                width: 100%;
+                height: 100vh;
+
+                border: none;
+                border-radius: 0;
+            }
+
+            #chat {
+                padding: 18px;
+            }
+
+            .message-content {
+                max-width: 88%;
+            }
+
+            .header {
+                padding: 15px;
+            }
+
+            .input-wrapper {
+                padding: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="chat-container">
+
+        <header class="header">
+
+            <div class="brand">
+
+                <div class="avatar">
+                    H
+                </div>
+
+                <div>
+                    <h1>Hardik AI</h1>
+                    <p>Ask me anything about Hardik</p>
+                </div>
+
+            </div>
+
+            <button class="clear-button" id="clear-button">
+                Clear
+            </button>
+
+        </header>
+
+
+        <main id="chat">
+
+            <div class="message ai">
+
+                <div class="message-content">
+
+                    <div class="label">
+                        Hardik AI
+                    </div>
+
+                    <div class="bubble">
+                        Hey! Ask me something about Hardik.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <div class="input-wrapper">
+
+            <div class="input-area">
+
+                <textarea id="question" rows="1" placeholder="Ask something..." autocomplete="off"></textarea>
+
+                <button id="send-button" title="Send">
+                    ↑
+                </button>
+
+            </div>
+
+            <div class="hint">
+                Enter to send · Shift + Enter for a new line
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const input = document.getElementById("question");
+        const sendButton = document.getElementById("send-button");
+        const clearButton = document.getElementById("clear-button");
+        const chat = document.getElementById("chat");
+
+
+        function addMessage(text, type) {
+
+            const message = document.createElement("div");
+
+            message.className = `message ${type}`;
+
+
+            const content = document.createElement("div");
+
+            content.className = "message-content";
+
+
+            const label = document.createElement("div");
+
+            label.className = "label";
+
+            label.textContent =
+                type === "user"
+                    ? "You"
+                    : "Hardik AI";
+
+
+            const bubble = document.createElement("div");
+
+            bubble.className = "bubble";
+
+            bubble.textContent = text;
+
+
+            content.appendChild(label);
+            content.appendChild(bubble);
+
+            message.appendChild(content);
+
+            chat.appendChild(message);
+
+            chat.scrollTop = chat.scrollHeight;
+
+
+            return bubble;
+        }
+
+
+        function setLoading(loading) {
+
+            sendButton.disabled = loading;
+            input.disabled = loading;
+
+        }
+
+
+        async function sendMessage() {
+
+            const question = input.value.trim();
+
+            if (!question || sendButton.disabled) {
+                return;
+            }
+
+
+            addMessage(question, "user");
+
+            input.value = "";
+
+            input.style.height = "auto";
+
+            setLoading(true);
+
+
+            const answerBubble =
+                addMessage("", "ai");
+
+            answerBubble.classList.add("typing");
+
+            answerBubble.innerHTML = `
+                <span class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            `;
+
+
+            try {
+
+                const response = await fetch(
+                    "/chat",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            question: question
+                        })
+                    }
+                );
+
+
+                if (!response.ok) {
+                    throw new Error(
+                        `Server returned ${response.status}`
+                    );
+                }
+
+
+                if (!response.body) {
+                    throw new Error(
+                        "Streaming is not supported."
+                    );
+                }
+
+
+                answerBubble.classList.remove(
+                    "typing"
+                );
+
+                answerBubble.textContent = "";
+
+
+                const reader =
+                    response.body.getReader();
+
+                const decoder =
+                    new TextDecoder();
+
+
+                while (true) {
+
+                    const {
+                        value,
+                        done
+                    } = await reader.read();
+
+
+                    if (done) {
+                        break;
+                    }
+
+
+                    const text =
+                        decoder.decode(value);
+
+                    answerBubble.textContent += text;
+
+                    chat.scrollTop =
+                        chat.scrollHeight;
+
+                }
+
+
+            } catch (error) {
+
+                answerBubble.classList.remove(
+                    "typing"
+                );
+
+                answerBubble.textContent =
+                    "Something went wrong. Please try again.";
+
+                console.error(error);
+
+            }
+
+
+            setLoading(false);
+
+            input.focus();
+
+        }
+
+
+        sendButton.addEventListener(
+            "click",
+            sendMessage
+        );
+
+
+        input.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Enter" &&
+                    !event.shiftKey
+                ) {
+
+                    event.preventDefault();
+
+                    sendMessage();
+
+                }
+
+            }
+        );
+
+
+        input.addEventListener(
+            "input",
+            function () {
+
+                this.style.height = "auto";
+
+                this.style.height =
+                    Math.min(
+                        this.scrollHeight,
+                        120
+                    ) + "px";
+
+            }
+        );
+
+
+        clearButton.addEventListener(
+            "click",
+            async function () {
+
+                try {
+
+                    const response = await fetch(
+                        "/clear",
+                        {
+                            method: "POST"
+                        }
+                    );
+
+                    if (!response.ok) {
+                        throw new Error("Failed to clear conversation");
+                    }
+
+                    chat.innerHTML = `
+                <div class="message ai">
+
+                    <div class="message-content">
+
+                        <div class="label">
+                            Hardik AI
+                        </div>
+
+                        <div class="bubble">
+                            New conversation started. Ask me something about Hardik.
+                        </div>
+
+                    </div>
+
+                </div>
+            `;
+
+                    input.focus();
+
+                } catch (error) {
+
+                    console.error(error);
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

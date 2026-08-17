@@ -1,0 +1,262 @@
+---BASIC INFORMATION---
+Name : Hardik Soni
+Role : Engineering student
+Degree : B.Tech in Computer Science Engineering specialized with Data Sciences and Artificial Intelligence
+College Name : Indian Institute of Information Technology, Ranchi
+
+---ACADEMIC INFORMATION---
+Current academic status : Undergraduate engineering student
+Branch: Computer Science Engineering
+Specialization : Data Science and Artificial Intelligence
+Institution : Indian Institute of Information Technology, Ranchi
+
+Academic Interests:
+-Physics
+-Mathematics
+-Astronomy
+-Biology
+-Quantum Physics
+-Data Science
+-Artificial Intelligence
+-Machine Learning
+-Computer Science
+
+Subjects/Areas studied:
+- Calculus
+- Probability and Statistics
+- Linear Algebra
+- Programming Languages(C, C++, Python)
+- Web Development (Front-end)
+- Digital Logic Design
+- Data Structures and Algorithms
+
+---TECHNICAL BACKGROUND---
+
+Programming Languages:
+    C, C++, Python, JavaScript
+
+Programming Concepts:
+
+    Variables and data types
+    Conditional statements (if/else)
+    Loops (for, while)
+    Functions
+    Arrays / strings
+    Object-oriented programming (OOP)
+    Recursion
+    Data structures
+    Algorithms
+    File handling
+    Exception/error handling
+
+Technical Skills:
+- Basic software development
+- Basic web development
+- Data Structures and Algorithms
+- Basic problem solving
+- AI prompting / prompt engineering
+- Basic computer and laptop operations
+- GitHub
+- Basic debugging
+
+Tools/Technologies:
+- GitHub
+- GitHub Desktop
+- Visual Studio Code
+- HTML
+- CSS
+- JavaScript
+- Python Libraries(numpy, pandas, matplotlib)
+
+Artificial Intelligence / Data Science:
+- Machine Learning (Learning)
+- Generative AI (Learning)
+- Prompt Engineering (used it)
+- Large Language Models (LLMs) (Learning)
+- Retrieval-Augmented Generation (RAG) (Learning)
+- Data analysis (Learning)
+- Data visualization (heard of it)
+- NumPy (used it)
+- Pandas (used it)
+- Matplotlib (used it)
+- Scikit-learn (heard of it)
+- Neural networks / Deep Learning (Learning)
+- Natural Language Processing (NLP) (heard of it)
+- AI APIs (used it)
+
+Projects:
+- Dating Profile Website:
+    Purpose : My own profile as for Dating
+    Technologies used : HTML, CSS, JavaScript, Prompt Engineering, Github, Claude
+    What I did : Designing, Prompt Engineering, Debugging, Content writing.
+    Current status : Deployed and Functional
+    Learning Source:
+    - Independently designed and developed as a personal project.
+    - The website concept, design, content, and images were created/provided by Hardik.
+    - Claude was used to assist with writing the code.
+    - Debugging and troubleshooting were performed by Hardik.
+- Real time Weather app using open Weather API 
+    Purpose : tells Real time weather of any city you'll enter 
+    Technologies used : 
+        - Python 3.14.2
+        - PyQt5
+        - OpenWeatherMap API
+        - Requests
+        - python-dotenv
+    What I did : 
+        - Developed a desktop weather application using Python and PyQt5.
+        - Integrated the OpenWeatherMap API to fetch real-time weather data.
+        - Used requests for API communication.
+        - Used python-dotenv to securely manage the API key.
+        - Implemented error handling for invalid cities, missing API keys, and connection timeouts.
+    Current status : Deployed and Functional
+    Learning Source:
+        - Built by following Bro Code's tutorial.
+        - The project was created primarily as a learning exercise.
+
+---CREATIVE / ARTISTIC SKILLS---
+Artistic Skills:
+- Traditional drawing:
+    - Painting
+    - Sketching
+    - Illustrating
+    - backgrounds
+    - Perspective
+    - Poses 
+    - Abstract art 
+- Anime Illustration
+- Pixel Art
+
+Art styles / Medium:
+    Art Styles:
+        - Anime / Manga 
+        - Semi-realism
+        - Cartoon
+        - Portraiture
+        - Character Design
+        - Pixel Art
+        - Surrealism
+        - Stylized Art
+        - Sketch Art
+    Medium:
+    - Pencil
+    - Colored Pencil
+    - Ballpoint Pen
+    - Fineliner
+    - Watercolor
+    - Acrylic Paint 
+    - Pastels
+    - Digital Softwares (Krita, MS Paint)
+
+
+---HOBBIES/INTERESTS---
+Hobbies:
+- Drawing/ Illustration
+- Going to Gym
+- Photography
+- Music
+- Book Reading
+Leisure:
+- scrolling reels
+Media Interests:
+- Anime
+- Manga
+- Movies
+- Music videos and Music
+Other Interests:
+- Science
+- Philosophy
+- Psychology
+- Pop Culture
+- Filmmaking
+---PERSONAL PREFERENCES---
+Learning Preferences:
+- Step-by-step explanation
+- Intituitive learning
+- Practical Examples
+- Understanding Concepts before making
+Technical Preferences:
+- Preferred Programming Languages: Python, C++
+- Technologies I like to use : VS code, Youtube, Canva, Gemini, ChatGPT, Claude, Figma, Krita
+- Technologies I dislike : Codechef, Leetcode, Codeforces
+- I like optimized implementation (I am just lazy to make things optimized)
+- I like code to be explained just once line-by-line after that I'll make sense of other things myself
+Entertainment Preferences:
+- Animes :
+    - Shoujo
+    - Seinen
+    - Rom-com
+    - Comedy
+    - Shonen (if fights and story are good)
+- Cinema:
+    - Worldwide
+    - Any Genre (not american romance which glorifies cheating)
+    - Story should be good
+    - Not to be Boring
+- Art
+    - Anime portraits
+    - Traditional > Digital 
+    - Makes what I want to not what others want me to draw 
+    - Abstract
+General Preferences:
+- Cleanliness
+- Organized things
+- Same level of thinking
+- Not just being a nerd and ignoring all other factors which make you better
+
+---GOALS AND LEARNING---
+Current Goals:
+- Landing and Internship 
+- Buying a new phone
+- Building my Physique
+Technical Goals:
+- Learning Machine Learning
+- being able to build a Neural Network
+- Learning Data Science
+- Software Development
+Academic Goals:
+- 8+ CGPA
+- Mathematics
+Skills I want to learn:
+- better at drawing portraits
+- being better at Illustrating
+- being a better coder (even if I hate it)
+Long-term Goals:
+- Becoming a Data Scientist
+- A Better Human
+- An Inspiration
+- livin a Healthy Life
+- Gori Biwi
+
+---COMMUNICATION AND AI PREFERENCES---
+Response Style:
+- Casual and friendly
+- Not overly formal
+- Joking is welcome sometimes
+- Be honest and straightforward, even when the truth is uncomfortable
+- Do not agree just to please me; challenge me when I am wrong
+- Prefer concise answers over unnecessarily long explanations
+Learning / Explanation Style:
+- When reviewing a program or solution, first explain what the existing program is doing.
+- Clearly identify what can be improved in the existing approach.
+- Prefer improving the current approach rather than immediately replacing it with a different technique.
+- Suggest completely different techniques or approaches only when the existing approach is fundamentally unsuitable or ineffective.
+- Explain the reasoning behind suggested improvements.
+AI Interaction Preferences:
+- Ask for clarification when important information is missing rather than making significant assumptions.
+- Point out mistakes or inaccuracies instead of agreeing with me just to be agreeable.
+- Maintain relevant context from earlier parts of the conversation.
+- Help me work through difficult tasks step-by-step when needed.
+- Be transparent when you are uncertain or do not know something.
+- Explain the reasoning behind recommendations when it is useful.
+Things I Dislike:
+- Excessively long responses when a concise answer would be sufficient
+- Unnecessary repetition
+- Excessive disclaimers or irrelevant warnings
+- Excessive or forced enthusiasm
+- Excessive use of emojis
+- Overly formal or robotic language
+- Agreeing with me just to be agreeable
+- Making unnecessary assumptions instead of asking for clarification
+- Suggesting completely different solutions when my existing approach can be improved
+- Repeating information I already understand
